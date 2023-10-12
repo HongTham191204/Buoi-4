@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@*<h2> Thực hành javacript</h2>
+    <script>
+        var hoten = prompt("Nhập họ tên");
+        var tuoi = prompt("Nhập tuổi");
+        document.writeln("Xin chào bạn " + "<h2>"+ hoten+"</h2></br>");
+        document.writeln("Tuổi của bạn là " + "<b>" +tuoi +"</b>");
+        function HienThi(ten, tuoi)
+        {
+            //alert("Xin chào: " + ten + " Tuổi của bạn là:" + tuoi);
+            document.writeln("Xin chào bạn " + "<h2>" + ten + "</h2></br>");
+            document.writeln("Tuổi của bạn là " + "<b>" + tuoi + "</b>");
+
+        }
+
+    </script>
+    <form>
+        <lable>Họ tên :</lable><input type="text" name="txtName"/>
+        <label>Tuổi:</label><input type="text" name="txtTuoi"/>
+        <input type="button" value="Gửi" onclick="HienThi(txtName.value,txtTuoi.value)"/>
+    </form>
+    <input type="button" value="Hôm nay"onclick="HienThiNgay()"/>*@
+
+@{
+    ViewBag.Title = "About";
+}
+<script src="~/Scripts/MyJS/showDate.js"></script>
+@*<h2>Thực hành Javascirpt</h2>
+    <script>
+        var hoten = prompt("nhập họ tên: ");
+        var tuoi = prompt("nhập tuổi: ");
+        document.writeln("Helu: " + "<h2>"+ hoten+"<h2></br>");
+        document.writeln("Tuổi của bạn: " + "<b >" + tuoi + "<b>");
+        function HienThi(ten, tuoi) {
+            alert("Xin chào: " + ten + ",tuổi của bạn là: " + tuoi);   //hiện kiểu thông báo
+            document.writeln("Helu: " + "<h2>" + hoten + "<h2></br>");  //hiện qua cái form
+            document.writeln("Tuổi của bạn: " + "<b >" + tuoi + "<b>");
+
+        }
+    </script>
+    <form>
+        <label>Họ Tên</label> <input type="text" name="txtName" />
+        <label>Tuổi</label> <input type="text" name="txtAge" />
+        <input type="button" value="Submit" onclick="HienThi(txtName.value, txtAge.value)"/>
+    </form>
+    <input type="button" value="Hôm nay" onclick="HienThiNgay()"/>*@
+
+
+@*VD4*@
+<h1>Nhập số lượng và đơn giá</h1>
+<form method="post">
+    <label>Đơn giá:</label> <input type="text" id="donggia" name="donggia" /><br />
+    <label>Số lượng:</label>
+    @*<%-- Cách 1:*@ <!--<input type="number" id="soluong" name="soluong" onkeyup="tinhtien();" /><br />--> @*//onkeyup: nhả phím chuột hiện lên--%>*@
+    @*<%--// Cách 2 ko cần function:--%>*@ <input type="text" id="soluong" name="soluong" onkeyup="thanhtien.value = parseFloat(soluong.value)* parseFloat(donggia.value)" ; /><br />
+    <label>Thành tiền:</label>
+    <input type="text" id="thanhtien" name="thanhtien" /><br />
+</form>
+
+@*VD5*@
+<form>
+    Bạn có phải là sinh viên khoa CNTT, trường Huflit không?
+    <br />
+    <input type="radio" id="chon" name="radio" value="" />Phải
+    <br />
+    <input type="radio" id="chon" name="radio" value="" />Không Phải
+    <br />
+    <input type="submit" value="Câu trả lời" onclick="Response();" />
+    <br />
+    <span id="Huflit"></span>
+</form>
+
+
+@*VD6*@
+<h2>Hãy chọn các sở thích của bạn</h2>
+<input type="checkbox" name="nutchon" value="Đi chơi" /> <label>Đi chơi</label>
+<br />
+<input type="checkbox" name="nutchon" value="Đi du lịch" /> <label>Đi du lịch</label>
+<br />
+<input type="checkbox" name="nutchon" value="Đi ăn" /> <label>Đi ăn</label>
+<br />
+<input type="checkbox" name="nutchon" value="Đi siêu thị" /> <label>Đi siêu thị</label>
+<br />
+<input type="checkbox" name="nutchon" value="học lập trình" /> <label>học lập trình</label>
+<br />
+<input type="checkbox" name="nutchon" value="Ở nhà nghỉ ngơi" /> <label>Ở nhà nghỉ ngơi</label>
+<br />
+<br />
+<input type="button" id="btn" value="Xem kết quả" onclick="ResultView();" />
+
